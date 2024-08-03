@@ -64,7 +64,6 @@ let userVSuser = () => {
                 idNode = event.target.id
                 if ((event.target.innerHTML == "x" || event.target.innerHTML == "o")) {
                     alert(`This box already contains ${event.target.innerHTML}`)
-                    console.log("iam userVSuser")
                 }
     
                 else {
@@ -272,7 +271,6 @@ let compVSuser = () => {
             box.addEventListener("click", (e) => {
                 if (((e.target.innerHTML == "x") || (e.target.innerHTML == "o"))) {
                     alert(`This Box already contains ${e.target.innerHTML}`)
-                    console.log("i am compVSuser")
                 }
     
                 else {
