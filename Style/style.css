@@ -52,10 +52,21 @@ body {
   height: 100px;
   display: flex;
   border-bottom: 2px solid gray;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 5px;
+}
+
+.btn button{
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .ticTakCard {

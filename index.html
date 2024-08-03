@@ -9,8 +9,16 @@
   <body>
     <div class="container">
       <div class="msgBox">
-        <p>Let's Play</p>
-        <p>It's X Tern</p>
+        <div class="msg">
+          <p>Let's Play</p>
+          <p>It's X Tern</p>
+        </div>
+        <div class="btn comBtn">
+          <button onclick="compVSuser()">Play With AI</button>
+        </div>
+        <div class="btn userBtn">
+          <button onclick="userVSuser()">Play With User</button>
+        </div>
       </div>
       <div class="ticTakCard">
         <div id="box1" class="boxes"></div>
@@ -37,5 +45,6 @@
       </div>
     </div>
     <script src="./Script/script.js"></script>
+    <!-- <script src="./Script/computerScript.js"></script> -->
   </body>
 </html>
