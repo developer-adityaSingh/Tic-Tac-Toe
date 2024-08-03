@@ -56,12 +56,18 @@ body {
   align-items: center;
   gap: 5px;
 }
-
+.buttons{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-evenly;
+}
 .btn button{
   padding: 15px;
   border-radius: 15px;
   font-size: 1rem;
   color: white;
+  height: fit-content;
   background-color: black;
   border: none;
   outline: none;
@@ -78,7 +84,7 @@ body {
   align-items: center;
 }
 
-.msgBox .msg p {
+.msgBox p {
   font-size: 1.4rem;
   color: white;
 }
@@ -129,7 +135,7 @@ body {
   .btn button{
     padding: 10px;
     font-size: 0.8rem;
-    width: 120px;
+    width: fit-content;
   }
   .ticTakCard{
     width: 304px;
