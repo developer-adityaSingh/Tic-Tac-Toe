@@ -38,7 +38,7 @@ let userVSuser = () => {
                 if (check == 0) {
                     event.target.classList.add("scaleUp")
                     event.target.innerHTML = "x"
-                    document.querySelector(".msgBox").innerHTML = "<p>It's O Tern</p>"
+                    document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's O Tern</p>"
                     check = 1
                     lastIdNode = event.target.id
                     setTimeout(() => {
@@ -49,7 +49,7 @@ let userVSuser = () => {
                 else if (check == 1) {
                     event.target.classList.add("scaleUp")
                     event.target.innerHTML = "o"
-                    document.querySelector(".msgBox").innerHTML = "<p>It's X Tern</p>"
+                    document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's X Tern</p>"
                     check = 0
                     lastIdNode = event.target.id
                     setTimeout(() => {
@@ -68,8 +68,7 @@ let compVSuser = () => {
     let computer = 1
     let lastInputBox = box1
     let user = 0
-    // document.querySelector(".msgBox").innerHTML = "<p>A.I VS USER</p>" + document.querySelector(".msgBox").innerHTML
-    
+    document.querySelector(".msgBox").firstElementChild.innerHTML= "AI VS USER"
 
     let computerPlay = (computer, lastBox) => {
         console.log("I am called")

@@ -89,6 +89,11 @@ body {
   color: white;
 }
 
+.msg{
+  font-size: 1.4rem;
+  color: white;
+}
+
 .boxes {
   width: 150px;
   height: 150px;
