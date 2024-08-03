@@ -1,64 +1,131 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom right, rgb(16, 16, 16), rgba(20, 20, 20, 0.836))
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom right,
+    rgb(16, 16, 16),
+    rgba(20, 20, 20, 0.836)
+  );
 }
 
-.container{
-    width: 480px;
-    height: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+/* utility class */
+
+.borderRightBox{
+    width: 2px;
+    height: 150px;
+    background-color: gray;
 }
 
-.msgBox{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+.borderTopBox{
+    width: 150px;
+    height: 2px;
+    background-color: gray;
 }
 
-.msgBox p{
-    font-size: 1.4rem;
-    color: white;
+.container {
+  width: 480px;
+  height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 6px 6px 13px 3px black;
 }
 
-.boxes{
-    width: 160px;
-    height: 160px;
-    border: 2px solid green;
-    background: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.msgBox {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  border-bottom: 2px solid gray;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.ticTakCard {
+  width: 454px;
+  height: 454px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.msgBox p {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.boxes {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+  color: white;
+}
+
+.scaleUp {
+  animation: scaleUp 0.2s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    font-size: 0px;
+  }
+  100% {
+    opacity: 1;
     font-size: 120px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 310px;
+    height: 440px;
+  }
+  
+  .ticTakCard{
+    width: 304px;
+    height: 304px;
+  }
+
+  .boxes {
+    width: 100px;
+    height: 100px;
+    font-size: 70px;
+  }
+  .borderRightBox{
+    width: 2px;
+    height: 100px;
+    background-color: gray;
 }
 
-@media (max-width: 500px) {
-    .container{
-        width: 240px;
-        height: 340px;
+.borderTopBox{
+    width: 100px;
+    height: 2px;
+    background-color: gray;
+}
+@keyframes scaleUp {
+    0% {
+      opacity: 0;
+      font-size: 0px;
     }
-
-    .boxes{
-        width: 80px;
-        height: 80px;
-        font-size: 50px;
+    100% {
+      opacity: 1;
+      font-size: 70px;
     }
-
-    
+  }
 }

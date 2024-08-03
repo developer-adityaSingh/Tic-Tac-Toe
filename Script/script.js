@@ -15,7 +15,7 @@ function winnerCheck() {
             window.location.reload()
         }
     }
-    else if (((document.getElementById("box1").innerHTML == "o") || (document.getElementById("box1").innerHTML == "x")) && ((document.getElementById("box2").innerHTML == "o") || (document.getElementById("box2").innerHTML == "x")) && ((document.getElementById("box3").innerHTML == "o") || (document.getElementById("box4").innerHTML == "x")) && ((document.getElementById("box5").innerHTML == "o") || (document.getElementById("box5").innerHTML == "x")) && ((document.getElementById("box6").innerHTML == "o") || (document.getElementById("box6").innerHTML == "x")) && ((document.getElementById("box7").innerHTML == "o") || (document.getElementById("box7").innerHTML == "x")) && ((document.getElementById("box8").innerHTML == "o") || (document.getElementById("box8").innerHTML == "x")) && ((document.getElementById("box9").innerHTML == "o") || (document.getElementById("box9").innerHTML == "x"))) {
+    else if (((document.getElementById("box1").innerHTML == "o") || (document.getElementById("box1").innerHTML == "x")) && ((document.getElementById("box2").innerHTML == "o") || (document.getElementById("box2").innerHTML == "x")) && ((document.getElementById("box3").innerHTML == "o") || (document.getElementById("box3").innerHTML == "x")) && ((document.getElementById("box4").innerHTML == "o") || (document.getElementById("box4").innerHTML == "x")) && ((document.getElementById("box5").innerHTML == "o") || (document.getElementById("box5").innerHTML == "x")) && ((document.getElementById("box6").innerHTML == "o") || (document.getElementById("box6").innerHTML == "x")) && ((document.getElementById("box7").innerHTML == "o") || (document.getElementById("box7").innerHTML == "x")) && ((document.getElementById("box8").innerHTML == "o") || (document.getElementById("box8").innerHTML == "x")) && ((document.getElementById("box9").innerHTML == "o") || (document.getElementById("box9").innerHTML == "x"))) {
         let conf = confirm(`Match Draw`)
         if (conf == true) {
             window.location.reload()
@@ -27,8 +27,6 @@ function winnerCheck() {
 
 document.querySelectorAll(".boxes").forEach((e) => {
     e.addEventListener("click", (event) => {
-        console.log(event.target)
-        console.log(event.target.innerText)
         idNode = event.target.id
 
         if (event.target.innerHTML == "x" || event.target.innerHTML == "o") {
@@ -38,23 +36,25 @@ document.querySelectorAll(".boxes").forEach((e) => {
 
         else {
             if (check == 0) {
+                event.target.classList.add("scaleUp")
                 event.target.innerHTML = "x"
                 document.querySelector(".msgBox").innerHTML = "<p>It's O Tern</p>"
                 check = 1
                 lastIdNode = event.target.id
                 setTimeout(() => {
                     winnerCheck()
-                }, 30)
+                }, 210)
             }
 
             else if (check == 1) {
+                event.target.classList.add("scaleUp")
                 event.target.innerHTML = "o"
                 document.querySelector(".msgBox").innerHTML = "<p>It's X Tern</p>"
                 check = 0
                 lastIdNode = event.target.id
                 setTimeout(() => {
                     winnerCheck()
-                }, 30)
+                }, 210)
             }
         }
     })
