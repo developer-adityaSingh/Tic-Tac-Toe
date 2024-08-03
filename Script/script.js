@@ -61,6 +61,7 @@ let userVSuser = () => {
     })
 }
 
+
 let compVSuser = () => {
     document.querySelector(".userBtn").style.display = "flex"
     document.querySelector(".comBtn").style.display = "none"
