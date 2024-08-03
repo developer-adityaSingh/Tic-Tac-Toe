@@ -6,6 +6,9 @@ Welcome to the Tic-Tac-Toe game! This is a simple yet fun implementation of the 
 
 ![Tic-Tac-Toe Preview](https://github.com/developer-adityaSingh/Tic-Tac-Toe/blob/main/Asset/preview.png)
 
+#Live
+![TIC TAC TOE](https://tic-tac-toe-eta-teal.vercel.app/)
+
 ## Features
 
 - Classic 3x3 Tic-Tac-Toe board
