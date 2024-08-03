@@ -57,7 +57,6 @@ let userVSuser = () => {
     document.querySelector(".userBtn").style.display = "none"
     document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>Let's Play</p>"
     let check = 0
-
     if (userPreference == "user") {
         document.querySelectorAll(".boxes").forEach((e) => {
             e.addEventListener("click", (event) => {
