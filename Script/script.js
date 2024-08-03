@@ -1,13 +1,43 @@
-let winnerCheck = (lastIdNode) => {
+let resetState= ()=>{
+    document.querySelectorAll(".boxes").forEach((box)=>{
+       box.innerHTML= ""
+    })
+}
+let userPreference = NaN
+
+document.getElementById("computerButton").addEventListener("click", () => {
+    userPreference = "computer"
+    resetEventListeners()
+    compVSuser()
+})
+
+document.getElementById("userButton").addEventListener("click", () => {
+    userPreference = "user"
+    resetEventListeners()
+    userVSuser()
+})
+
+
+let resetEventListeners = () => {
+    document.querySelectorAll(".boxes").forEach((box) => {
+        box.replaceWith(box.cloneNode(true))
+    })
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    userPreference = "computer"
+    resetEventListeners()
+    compVSuser()
+})
+
+let winnerCheck = () => {
     if (((document.getElementById("box1").innerHTML == "x") && (document.getElementById("box2").innerHTML == "x") && (document.getElementById("box3").innerHTML == "x")) || ((document.getElementById("box4").innerHTML == "x") && (document.getElementById("box5").innerHTML == "x") && (document.getElementById("box6").innerHTML == "x")) || ((document.getElementById("box7").innerHTML == "x") && (document.getElementById("box8").innerHTML == "x") && (document.getElementById("box9").innerHTML == "x")) || ((document.getElementById("box1").innerHTML == "x") && (document.getElementById("box5").innerHTML == "x") && (document.getElementById("box9").innerHTML == "x")) || ((document.getElementById("box3").innerHTML == "x") && (document.getElementById("box5").innerHTML == "x") && (document.getElementById("box7").innerHTML == "x")) || ((document.getElementById("box1").innerHTML == "x") && (document.getElementById("box4").innerHTML == "x") && (document.getElementById("box7").innerHTML == "x")) || ((document.getElementById("box2").innerHTML == "x") && (document.getElementById("box5").innerHTML == "x") && (document.getElementById("box8").innerHTML == "x")) || ((document.getElementById("box3").innerHTML == "x") && (document.getElementById("box6").innerHTML == "x") && (document.getElementById("box9").innerHTML == "x"))) {
-        let winnerId = document.getElementById(`${lastIdNode}`).innerHTML
         let conf = confirm(`X is winner\nDo you want to continue`)
         if (conf == true) {
             window.location.reload()
         }
     }
     else if (((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box2").innerHTML == "o") && (document.getElementById("box3").innerHTML == "o")) || ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o")) || ((document.getElementById("box7").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o")) || ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o")) || ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o")) || ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box4").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o")) || ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o")) || ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o"))) {
-        let winnerId = document.getElementById(`${lastIdNode}`).innerHTML
         let conf = confirm(`O is winner\nDo you want to continue`)
         if (conf == true) {
             window.location.reload()
@@ -22,57 +52,57 @@ let winnerCheck = (lastIdNode) => {
 }
 
 let userVSuser = () => {
+    resetState()
     document.querySelector(".comBtn").style.display = "flex"
     document.querySelector(".userBtn").style.display = "none"
+    document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>Let's Play</p>"
     let check = 0
-    let lastIdNode = box1
     
-    document.querySelectorAll(".boxes").forEach((e) => {
-        e.addEventListener("click", (event) => {
-            idNode = event.target.id
-            if ((event.target.innerHTML == "x" || event.target.innerHTML == "o") && e.target.innerHTML != "") {
-                alert(`This box already contains ${event.target.innerHTML}`)
-            }
-
-            else {
-                if (check == 0) {
-                    event.target.classList.add("scaleUp")
-                    event.target.innerHTML = "x"
-                    document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's O Tern</p>"
-                    check = 1
-                    lastIdNode = event.target.id
-                    setTimeout(() => {
-                        winnerCheck(lastIdNode)
-                    }, 210)
+    if(userPreference == "user"){
+        document.querySelectorAll(".boxes").forEach((e) => {
+            e.addEventListener("click", (event) => {
+                idNode = event.target.id
+                if ((event.target.innerHTML == "x" || event.target.innerHTML == "o")) {
+                    alert(`This box already contains ${event.target.innerHTML}`)
+                    console.log("iam userVSuser")
                 }
-
-                else if (check == 1) {
-                    event.target.classList.add("scaleUp")
-                    event.target.innerHTML = "o"
-                    document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's X Tern</p>"
-                    check = 0
-                    lastIdNode = event.target.id
-                    setTimeout(() => {
-                        winnerCheck(lastIdNode)
-                    }, 210)
+    
+                else {
+                    if (check == 0) {
+                        event.target.classList.add("scaleUp")
+                        event.target.innerHTML = "x"
+                        document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's O Tern</p>"
+                        check = 1
+                        setTimeout(() => {
+                            winnerCheck()
+                        }, 210)
+                    }
+    
+                    else if (check == 1) {
+                        event.target.classList.add("scaleUp")
+                        event.target.innerHTML = "o"
+                        document.querySelector(".msgBox").firstElementChild.innerHTML = "<p>It's X Tern</p>"
+                        check = 0
+                        setTimeout(() => {
+                            winnerCheck()
+                        }, 210)
+                    }
                 }
-            }
+            })
         })
-    })
+    }
 }
 
 
 let compVSuser = () => {
+    resetState()
     document.querySelector(".userBtn").style.display = "flex"
     document.querySelector(".comBtn").style.display = "none"
-    let computer = 1
     let lastInputBox = box1
     let user = 0
     document.querySelector(".msgBox").firstElementChild.innerHTML= "AI VS USER"
 
-    let computerPlay = (computer, lastBox) => {
-        console.log("I am called")
-        if (computer == 1) {
+    let computerPlay = (lastBox) => {
             if ((lastBox == "box1" || lastBox == "box2" || lastBox == "box3" || lastBox == "box4" || lastBox == "box5" || lastBox == "box6" || lastBox == "box7" || lastBox == "box8" || lastBox == "box9") && (document.getElementById("box5").innerHTML == "")) {
                 document.getElementById("box5").classList.add("scaleUp")
                 document.getElementById("box5").innerHTML = "o"
@@ -234,29 +264,31 @@ let compVSuser = () => {
                     }
                 }
             }
-        }
+        
     }
 
-    document.querySelectorAll(".boxes").forEach((box) => {
-        box.addEventListener("click", (e) => {
-            if (((e.target.innerHTML == "x") || (e.target.innerHTML == "o")) && e.target.innerHTML != "") {
-                alert(`This Box already contains ${e.target.innerHTML}`)
-            }
-
-            else {
-                if (user == 0) {
-                    e.target.classList.add("scaleUp")
-                    e.target.innerHTML = "x"
-                    lastInputBox = e.target.id
-                    let lastIdNode = e.target.id
-                    setTimeout(() => {
-                        winnerCheck(lastIdNode)
-                    }, 205)
-                    setTimeout(() => {
-                        let user = computerPlay(computer, lastInputBox)
-                    }, 50)
+    if(userPreference == "computer"){
+        document.querySelectorAll(".boxes").forEach((box) => {
+            box.addEventListener("click", (e) => {
+                if (((e.target.innerHTML == "x") || (e.target.innerHTML == "o"))) {
+                    alert(`This Box already contains ${e.target.innerHTML}`)
+                    console.log("i am compVSuser")
                 }
-            }
+    
+                else {
+                        e.target.classList.add("scaleUp")
+                        e.target.innerHTML = "x"
+                        lastInputBox = e.target.id
+                        let lastIdNode = e.target.id
+                        setTimeout(() => {
+                            winnerCheck(lastIdNode)
+                        }, 205)
+                        setTimeout(() => {
+                            computerPlay(lastInputBox)
+                        }, 50)
+                }
+            })
         })
-    })
+    }
 }
+
