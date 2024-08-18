@@ -107,6 +107,78 @@ let compVSuser = () => {
             user = 0
             return user
         }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box2").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
+            document.getElementById("box3").innerHTML = "o";
+        }
+        else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box3").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
+            document.getElementById("box1").innerHTML = "o";
+        }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box3").innerHTML == "o") && (document.getElementById("box2").innerHTML == "")) {
+            document.getElementById("box2").innerHTML = "o";
+        }
+        else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box6").innerHTML == "")) {
+            document.getElementById("box6").innerHTML = "o";
+        }
+        else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box4").innerHTML == "")) {
+            document.getElementById("box4").innerHTML = "o";
+        }
+        else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
+            document.getElementById("box5").innerHTML = "o";
+        }
+        else if ((document.getElementById("box7").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
+            document.getElementById("box9").innerHTML = "o";
+        }
+        else if ((document.getElementById("box8").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
+            document.getElementById("box7").innerHTML = "o";
+        }
+        else if ((document.getElementById("box7").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box8").innerHTML == "")) {
+            document.getElementById("box8").innerHTML = "o";
+        }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box4").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
+            document.getElementById("box7").innerHTML = "o";
+        }
+        else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
+            document.getElementById("box1").innerHTML = "o";
+        }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box4").innerHTML == "")) {
+            document.getElementById("box4").innerHTML = "o";
+        }
+        else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box8").innerHTML == "")) {
+            document.getElementById("box8").innerHTML = "o";
+        }
+        else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box2").innerHTML == "")) {
+            document.getElementById("box2").innerHTML = "o";
+        }
+        else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
+            document.getElementById("box5").innerHTML = "o";
+        }
+        else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
+            document.getElementById("box9").innerHTML = "o";
+        }
+        else if ((document.getElementById("box6").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
+            document.getElementById("box3").innerHTML = "o";
+        }
+        else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box6").innerHTML == "")) {
+            document.getElementById("box6").innerHTML = "o";
+        }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
+            document.getElementById("box9").innerHTML = "o";
+        }
+        else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
+            document.getElementById("box1").innerHTML = "o";
+        }
+        else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
+            document.getElementById("box5").innerHTML = "o";
+        }
+        else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
+            document.getElementById("box7").innerHTML = "o";
+        }
+        else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
+            document.getElementById("box3").innerHTML = "o";
+        }
+        else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
+            document.getElementById("box5").innerHTML = "o";
+        }
         else if (((document.getElementById("box1").innerHTML == "x") && (document.getElementById("box2").innerHTML == "x") && (document.getElementById("box3").innerHTML == ""))) {
             document.getElementById("box3").classList.add("scaleUp")
             document.getElementById("box3").innerHTML = "o"
@@ -252,79 +324,8 @@ let compVSuser = () => {
             return user
         }
         else {
-            if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box2").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
-                document.getElementById("box3").innerHTML = "o";
-            }
-            else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box3").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
-                document.getElementById("box1").innerHTML = "o";
-            }
-            else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box3").innerHTML == "o") && (document.getElementById("box2").innerHTML == "")) {
-                document.getElementById("box2").innerHTML = "o";
-            }
-            else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box6").innerHTML == "")) {
-                document.getElementById("box6").innerHTML = "o";
-            }
-            else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box4").innerHTML == "")) {
-                document.getElementById("box4").innerHTML = "o";
-            }
-            else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
-                document.getElementById("box5").innerHTML = "o";
-            }
-            else if ((document.getElementById("box7").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
-                document.getElementById("box9").innerHTML = "o";
-            }
-            else if ((document.getElementById("box8").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
-                document.getElementById("box7").innerHTML = "o";
-            }
-            else if ((document.getElementById("box7").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box8").innerHTML == "")) {
-                document.getElementById("box8").innerHTML = "o";
-            }
-            else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box4").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
-                document.getElementById("box7").innerHTML = "o";
-            }
-            else if ((document.getElementById("box4").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
-                document.getElementById("box1").innerHTML = "o";
-            }
-            else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box4").innerHTML == "")) {
-                document.getElementById("box4").innerHTML = "o";
-            }
-            else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box8").innerHTML == "")) {
-                document.getElementById("box8").innerHTML = "o";
-            }
-            else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box2").innerHTML == "")) {
-                document.getElementById("box2").innerHTML = "o";
-            }
-            else if ((document.getElementById("box2").innerHTML == "o") && (document.getElementById("box8").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
-                document.getElementById("box5").innerHTML = "o";
-            }
-            else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box6").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
-                document.getElementById("box9").innerHTML = "o";
-            }
-            else if ((document.getElementById("box6").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
-                document.getElementById("box3").innerHTML = "o";
-            }
-            else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box6").innerHTML == "")) {
-                document.getElementById("box6").innerHTML = "o";
-            }
-            else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box9").innerHTML == "")) {
-                document.getElementById("box9").innerHTML = "o";
-            }
-            else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box1").innerHTML == "")) {
-                document.getElementById("box1").innerHTML = "o";
-            }
-            else if ((document.getElementById("box1").innerHTML == "o") && (document.getElementById("box9").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
-                document.getElementById("box5").innerHTML = "o";
-            }
-            else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box5").innerHTML == "o") && (document.getElementById("box7").innerHTML == "")) {
-                document.getElementById("box7").innerHTML = "o";
-            }
-            else if ((document.getElementById("box5").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box3").innerHTML == "")) {
-                document.getElementById("box3").innerHTML = "o";
-            }
-            else if ((document.getElementById("box3").innerHTML == "o") && (document.getElementById("box7").innerHTML == "o") && (document.getElementById("box5").innerHTML == "")) {
-                document.getElementById("box5").innerHTML = "o";
-            }
-            else {
+            
+            
                 console.log("this is done");
                 for (let index = 1; index <= 9; index++) {
                     let box = document.getElementById(`box${index}`);
@@ -334,7 +335,6 @@ let compVSuser = () => {
                         let user = 0;
                         return user;
                     }
-                }
             }
         }
         
